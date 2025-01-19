@@ -1,6 +1,3 @@
-//ProgrammingAdvices.com
-//Mohammed Abu-Hadhoud
-
 #pragma once
 #include <iostream>
 #include <string>
@@ -217,32 +214,73 @@ public:
 
     }
 
-    static string  EncryptText(string Text, short EncryptionKey)
+
+    static string NumberToText(int Number)
     {
 
-        for (int i = 0; i <= Text.length(); i++)
+        if (Number == 0)
         {
+            return "";
+        }
 
-            Text[i] = char((int)Text[i] + EncryptionKey);
+        if (Number >= 1 && Number <= 19)
+        {
+            string arr[] = { "", "One","Two","Three","Four","Five","Six","Seven",
+        "Eight","Nine","Ten","Eleven","Twelve","Thirteen","Fourteen",
+          "Fifteen","Sixteen","Seventeen","Eighteen","Nineteen" };
+
+            return  arr[Number] + " ";
 
         }
 
-        return Text;
-
-    }
-
-    static string  DecryptText(string Text, short EncryptionKey)
-    {
-
-        for (int i = 0; i <= Text.length(); i++)
+        if (Number >= 20 && Number <= 99)
         {
-
-            Text[i] = char((int)Text[i] - EncryptionKey);
-
+            string arr[] = { "","","Twenty","Thirty","Forty","Fifty","Sixty","Seventy","Eighty","Ninety" };
+            return  arr[Number / 10] + " " + NumberToText(Number % 10);
         }
-        return Text;
+
+        if (Number >= 100 && Number <= 199)
+        {
+            return  "One Hundred " + NumberToText(Number % 100);
+        }
+
+        if (Number >= 200 && Number <= 999)
+        {
+            return   NumberToText(Number / 100) + "Hundreds " + NumberToText(Number % 100);
+        }
+
+        if (Number >= 1000 && Number <= 1999)
+        {
+            return  "One Thousand " + NumberToText(Number % 1000);
+        }
+
+        if (Number >= 2000 && Number <= 999999)
+        {
+            return   NumberToText(Number / 1000) + "Thousands " + NumberToText(Number % 1000);
+        }
+
+        if (Number >= 1000000 && Number <= 1999999)
+        {
+            return  "One Million " + NumberToText(Number % 1000000);
+        }
+
+        if (Number >= 2000000 && Number <= 999999999)
+        {
+            return   NumberToText(Number / 1000000) + "Millions " + NumberToText(Number % 1000000);
+        }
+
+        if (Number >= 1000000000 && Number <= 1999999999)
+        {
+            return  "One Billion " + NumberToText(Number % 1000000000);
+        }
+        else
+        {
+            return   NumberToText(Number / 1000000000) + "Billions " + NumberToText(Number % 1000000000);
+        }
+
 
     }
+
+
 
 };
-
