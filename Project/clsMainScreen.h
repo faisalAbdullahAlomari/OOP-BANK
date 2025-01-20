@@ -80,7 +80,7 @@ private:
 	static void _ShowTransactionMenu() {
 
 		//cout << "\nTransaction Menu Will Be Here...\n";
-		clsTransactionsScreen::ShowTransactionsMenue();
+		clsTransactionsScreen::ShowTransactionsMenu();
 	}
 
 	static void _ShowManageUsersMenu() {

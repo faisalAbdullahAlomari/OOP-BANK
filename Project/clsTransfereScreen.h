@@ -73,7 +73,7 @@ public:
 
 		if (toupper(Answere)) {
 
-			if (SourceClient.Transfere(Amount, DestinationClient)) {
+			if (SourceClient.Transfer(Amount, DestinationClient, CurrentUser.getUserName())) {
 
 				cout << "\nTransfere Done Successfully.\n";
 			}
