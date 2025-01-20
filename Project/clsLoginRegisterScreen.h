@@ -1,4 +1,4 @@
-#pragma one
+#pragma once
 #include <iostream>
 #include <iomanip>
 #include "clsUser.h"
@@ -27,7 +27,7 @@ public:
 
 		vector<clsUser::stLoginRegisterRecord> vLGRecord = clsUser::GetLoginRegisetList();
 
-		string Subtitle = "(" + to_string(vLGRecord.size());
+		string Subtitle = "\t\t(" + to_string(vLGRecord.size());
 
 		_DrawScreenHeader("\tLogin Register List Screen", Subtitle + ") Record(s).");
 

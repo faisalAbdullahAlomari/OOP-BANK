@@ -30,7 +30,6 @@ private:
         return Choice;
     }
 
-
     static void _ShowDepositScreen()
     {
         //cout << "\n Deposit Screen will be here.\n";
