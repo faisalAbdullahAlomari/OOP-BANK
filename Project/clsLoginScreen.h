@@ -51,10 +51,6 @@ private:
 		return true;
 	}
 
-	void _Log() {
-
-	}
-
 public:
 
 	static bool ShowLoginScreen() {
