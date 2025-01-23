@@ -399,8 +399,8 @@ public:
 
 	static vector<stLoginRegisterRecord> GetLoginRegisetList() {
 
-		stLoginRegisterRecord LGRecord;
-		vector<stLoginRegisterRecord> vLGRecord;
+		stLoginRegisterRecord LoginRegisterRecord;
+		vector<stLoginRegisterRecord> vLoginRegisterRecord;
 
 		fstream MyFile;
 		MyFile.open("LoginRegister.txt", ios::in);
@@ -411,13 +411,13 @@ public:
 
 			while (getline(MyFile, Line)) {
 
-				LGRecord = _ConverLoginRegisterLineToRecord(Line);
-				vLGRecord.push_back(LGRecord);
+				LoginRegisterRecord = _ConverLoginRegisterLineToRecord(Line);
+				vLoginRegisterRecord.push_back(LoginRegisterRecord);
 			}
 
 			MyFile.close();
 		}
 
-		return vLGRecord;
+		return vLoginRegisterRecord;
 	}
 };
