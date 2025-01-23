@@ -57,7 +57,7 @@ private:
 
     static void _GoBackToTransactionsMenu()
     {
-        cout << "\n\nPress any key to go back to Transactions Menue...";
+        cout << "\n\nPress any key to go back to Transactions Menu...";
         system("pause>0");
         ShowTransactionsMenu();
 
