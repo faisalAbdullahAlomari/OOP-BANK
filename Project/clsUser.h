@@ -35,7 +35,7 @@ private:
 
 		LoginRegisterRecord.DateTime = vLoginRegisterRecordDataLine[0];
 		LoginRegisterRecord.Username = vLoginRegisterRecordDataLine[1];
-		LoginRegisterRecord.Password = vLoginRegisterRecordDataLine[2];
+		LoginRegisterRecord.Password = clsUtil::DecryptText(vLoginRegisterRecordDataLine[2]);
 		LoginRegisterRecord.Permissions = stoi(vLoginRegisterRecordDataLine[3]);
 
 		return LoginRegisterRecord;
@@ -47,7 +47,7 @@ private:
 
 		LoginRecord += clsDate::GetSystemDateTimeString() + Seperator;
 		LoginRecord += UserName + Seperator;
-		LoginRecord += Password + Seperator;
+		LoginRecord += clsUtil::EncryptText(Password) + Seperator;
 		LoginRecord += to_string(Permissions);
 
 		return LoginRecord;
@@ -59,7 +59,7 @@ private:
 		vUserData = clsString::Split(Line, Seperator);
 
 		return clsUser(enMode::UpdateMode, vUserData[0], vUserData[1], vUserData[2], vUserData[3], vUserData[4],
-			vUserData[5], stoi(vUserData[6]));
+			clsUtil::DecryptText(vUserData[5]), stoi(vUserData[6]));
 	}
 
 	static string _ConvertUserObjectToLine(clsUser User, string Seperator = "#//#") {
@@ -70,7 +70,7 @@ private:
 		UserRecord += User.Email + Seperator;
 		UserRecord += User.Phone + Seperator;
 		UserRecord += User.getUserName() + Seperator;
-		UserRecord += User.getPassword() + Seperator;
+		UserRecord += clsUtil::EncryptText(User.getPassword()) + Seperator;
 		UserRecord += to_string(User.getPermissions());
 
 		return UserRecord;
