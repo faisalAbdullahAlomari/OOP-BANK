@@ -6,6 +6,7 @@
 #include <vector>
 #include <fstream>
 #include "clsDate.h"
+#include "clsUtil.h"
 
 using namespace std;
 
@@ -31,7 +32,7 @@ private:
 
 		stLoginRegisterRecord LoginRegisterRecord;
 
-		vector<string> vLoginRegisterRecordDataLine = clsString::Split(Line, Seperator);
+		vector<string> vLoginRegisterRecordDataLine = clsString::Split(Line, Seperator = "#//#");
 
 		LoginRegisterRecord.DateTime = vLoginRegisterRecordDataLine[0];
 		LoginRegisterRecord.Username = vLoginRegisterRecordDataLine[1];
