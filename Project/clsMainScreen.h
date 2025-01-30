@@ -12,6 +12,7 @@
 #include "clsManageUsersScreen.h"
 #include "Global.h"
 #include "clsLoginRegisterScreen.h"
+#include "clsCurrencyMainScreen.h"
 
 using namespace std;
 
@@ -29,13 +30,14 @@ private:
 		enTransactionsMenu = 6,
 		enManageUsers = 7,
 		enLoginRegister = 8,
-		enExit = 9
+		enCurrency = 9,
+		enExit = 10
 	};
 
 	static short _ReadMainMenuOption() {
 
-		cout << setw(37) << left << "" << "Choose What Do You Want To Do [1 - 9]: ";
-		short Choise = clsInputValidate::ReadShortNumberBetween(1, 9, "Enter Short Number Between 1 To 9: ");
+		cout << setw(37) << left << "" << "Choose What Do You Want To Do [1 - 10]: ";
+		short Choise = clsInputValidate::ReadShortNumberBetween(1, 10, "Enter Short Number Between 1 To 10: ");
 		
 		return Choise;
 	}
@@ -101,6 +103,11 @@ private:
 
 	}
 
+	static void _ShowCurrencyExchangeScreen() {
+
+		clsCurrencyMainScreen::ShowCurrencyMainScreen();
+	}
+
 	static void _Logout() {
 
 		CurrentUser = clsUser::Find("", "");
@@ -157,6 +164,12 @@ private:
 			_GoBackToMainMenu();
 			break;
 
+		case enMainMenuOptions::enCurrency:
+			system("cls");
+			_ShowCurrencyExchangeScreen();
+			_GoBackToMainMenu();
+			break;
+
 		case enMainMenuOptions::enExit:
 			system("cls");
 			_Logout();
@@ -182,7 +195,8 @@ public:
 		cout << setw(37) << left << "" << "\t[6] Transactions.\n";
 		cout << setw(37) << left << "" << "\t[7] Manage Users.\n";
 		cout << setw(37) << left << "" << "\t[8] Login Register.\n";
-		cout << setw(37) << left << "" << "\t[9] Logout.\n";
+		cout << setw(37) << left << "" << "\t[9] Currency Exchange.\n";
+		cout << setw(37) << left << "" << "\t[10] Logout.\n";
 		cout << setw(37) << left << "" << "===========================================\n";
 
 		_PerformMainMenuOption((enMainMenuOptions)_ReadMainMenuOption());

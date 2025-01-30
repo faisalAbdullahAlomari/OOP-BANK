@@ -5,27 +5,27 @@
 
 using namespace std;
 
-static void _PrintCurrency(clsCurrency Currency) {
-
-	cout << "\nCurrency Card:\n";
-	cout << "_____________________________\n";
-	cout << "\nCountry      : " << Currency.GetCountry();
-	cout << "\nCode         : " << Currency.GetCurrencyCode();
-	cout << "\nCurrency Name: " << Currency.GetCurrencyName();
-	cout << "\nRate(1$)     = " << Currency.GetRate();
-	cout << "\n_____________________________\n";
-}
+//static void _PrintCurrency(clsCurrency Currency) {
+//
+//	cout << "\nCurrency Card:\n";
+//	cout << "_____________________________\n";
+//	cout << "\nCountry      : " << Currency.GetCountry();
+//	cout << "\nCode         : " << Currency.GetCurrencyCode();
+//	cout << "\nCurrency Name: " << Currency.GetCurrencyName();
+//	cout << "\nRate(1$)     = " << Currency.GetRate();
+//	cout << "\n_____________________________\n";
+//}
 
 int main() {
 
-	/*while (true) {
+	while (true) {
 		
 		if (!clsLoginScreen::ShowLoginScreen()) {
 			break;
 		}
-	}*/
+	}
 
-	clsCurrency	Currency = Currency.FindByCode("jod");
+	/*clsCurrency	Currency = Currency.FindByCode("jod");
 
 	if (Currency.IsEmpty()) {
 
@@ -49,7 +49,7 @@ int main() {
 
 	cout << "Currency After Updating Rate:\n";
 	Currency.UpdateRate(0.71);
-	_PrintCurrency(Currency);
+	_PrintCurrency(Currency);*/
 
 	return 0;
 }
