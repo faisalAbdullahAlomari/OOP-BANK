@@ -34,6 +34,21 @@ private:
 
     }
 
+    static void _ShowFindCurrencyScreen() {
+
+        cout << "Find Curreny Screen Will Be Here...";
+    }
+
+    static void _ShowUpdateCurrenyScreen() {
+
+        cout << "Update Currency Screen Will Be Here...";
+    }
+
+    static void _ShowCurrencyCalcScreen() {
+
+        cout << "Currency Calculator Screen Will Be Here...";
+    }
+
     static void _GoBackToCurrenciesMainScreen() {
 
         cout << "\n\nPress Any Key To Go Back To Currencies Main Screen...\n";
@@ -50,7 +65,28 @@ private:
             _GoBackToCurrenciesMainScreen();
             break;
 
+        case enCurrencyMenuOptions::enFindCurrency:
+            system("cls");
+            _ShowFindCurrencyScreen();
+            _GoBackToCurrenciesMainScreen();
+            break;
 
+        case enCurrencyMenuOptions::enUpdateRate:
+            system("cls");
+            _ShowUpdateCurrenyScreen();
+            _GoBackToCurrenciesMainScreen();
+            break;
+
+        case enCurrencyMenuOptions::enCurrencyCalc:
+            system("cls");
+            _ShowCurrencyCalcScreen();
+            _GoBackToCurrenciesMainScreen();
+            break;
+
+        case enCurrencyMenuOptions::enMainMenu:
+        {
+            // This Will Take The User Automatically Back To The Main Menu...
+        }
         }
     }
 
