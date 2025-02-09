@@ -6,6 +6,7 @@
 #include "clsCurrencyListScreen.h"
 #include "clsFindCurrencyScreen.h"
 #include "clsUpdateCurrencyRateScreen.h"
+#include "clsCurrencyCalculatorScreen.h"
 
 using namespace std;
 
@@ -51,7 +52,8 @@ private:
 
     static void _ShowCurrencyCalcScreen() {
 
-        cout << "Currency Calculator Screen Will Be Here...";
+        //cout << "Currency Calculator Screen Will Be Here...";
+        clsCurrencyCalculatorScreen::ShowCurrencyCalculatorScreen();
     }
 
     static void _GoBackToCurrenciesMainScreen() {
@@ -99,6 +101,11 @@ public:
 
 	static void ShowCurrencyMainScreen() {
 		
+        if (!CheckAccessRights(clsUser::enPermissions::pCurrencyMainScreen)) {
+
+            return;
+        }
+
 		system("cls");
 
 		_DrawScreenHeader("\tCurrency Exchange Main Screen");

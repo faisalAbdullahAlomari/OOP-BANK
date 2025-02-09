@@ -115,6 +115,13 @@ private:
 			Permissions += clsUser::enPermissions::pLoginRegister;
 		}
 
+		cout << "\nCurrency Exchange Menu? Y/N: ";
+		cin >> Answere;
+		if (toupper(Answere) == 'Y') {
+
+			Permissions += clsUser::enPermissions::pCurrencyMainScreen;
+		}
+
 		return Permissions;
 	}
 
